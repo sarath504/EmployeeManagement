@@ -1,0 +1,51 @@
+<div class="roles-component">
+    <div class="role-header">
+        <div>
+            <h5>Roles<br><p class="roles-description">All the roles are configured here</p></h5>
+        </div>
+        <div>
+            <button type="button" class="add-role-button" routerLink="/home/addrole">
+                <img src="assets/Interface/Add.svg" class="plus-icon"> 
+                <p >ADD ROLE</p>
+            </button>
+        </div>
+    </div>
+    <div>
+        <app-filters (filteredRolesData)="filteredDataFromChildComponent($event)"></app-filters>
+    </div>
+    <div  class="roles-div">
+        <div class="roles-container" *ngFor="let role of rolesDetails">
+            <div class="role-name">
+                <h5>{{role.name}}</h5>
+                <img src="assets/edit.svg" class="role-edit" [routerLink]="['/home/addrole',role.roleID]">
+            </div>
+            <div class="role-department">
+                <div class="department">
+                    <img src="assets/team.svg" class="team-image">
+                    <span>Department</span>
+                </div>
+                <div>
+                    {{role.departmentName}}
+                </div>
+            </div>
+            <div class="role-location">
+                <div class="location">
+                    <img src="assets/location.svg" class="team-image">
+                    <span>Location</span>
+                </div>
+                <div>
+                    {{role.locationName}}
+                </div>
+            </div>
+            <div class="role-employees">
+                <span>Total Employees</span>
+                <img src="assets/stacked-image.png" class="profile-images">
+            </div>
+            <div class="view-employees">
+                <span [routerLink]="['/home/roledetails',role.roleID]">View all Employees</span>
+                <img src="assets/Vector.svg" class="arrow">
+            </div>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,139 @@
+.label{
+    color: #3e4146;
+}
+
+.role-name{
+    margin-top: 0.7%;
+    width: 200px;
+    padding: 2%;
+}
+
+.role-department{
+    display: flex;
+    gap: 20px;
+}
+
+.role-name:focus{
+    outline: 2px solid #378EFF;
+}
+
+.department{
+    margin-top: 0.7%;
+    width: 200px;
+    padding: 2.5%;
+}
+
+textarea{
+    resize: none;
+}
+
+.description-container{
+    margin-top: 2%;
+}
+
+.description:focus{
+    outline: 2px solid #378EFF;
+}
+
+.description{
+    margin-top: 0.7%;
+}
+
+.location-container{
+    margin-top: 0.7%;
+}
+
+.location{
+    margin-top: 0.5%;
+    padding: 0.7%;
+    width: 215px;
+}
+
+.assign-employees{
+    margin-top: 1%;
+}
+
+.assign{
+    margin-top: 0.7%;
+    width: 200px;
+    padding: 0.4%;
+}
+
+.buttons{
+    margin-top: 5%;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.cancel{
+    background-color: #FBEBEB;
+    color: #F57070;
+    width: 100px;
+    padding: 5%;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.add-role{
+    background-color: #F44848;
+    color: white;
+    width: 100px;
+    padding: 5%;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.employee-image{
+    height: 15px;
+    border-radius: 5px;
+}
+
+.employees{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5%;
+    margin-bottom: 0.5%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 5px rgb(185, 178, 178);
+    border-radius: 4px;
+}
+
+.error-image{
+    margin-top: 5px;
+    height: 10px;
+}
+
+.error-message{
+    color: red;
+    font-size: 11px;
+}
+
+.success-message{
+    background-color: rgb(251, 243, 243);
+    position: fixed;
+    z-index: 1;
+    top: 30px;
+    width: 380px;
+    height: 60px;
+    left: 550px;
+    box-shadow: 1px 1px 10px black;
+    margin-left: 25%;
+    align-items: center;
+    animation-name: 'toaster-message';
+    animation-duration: 2s;
+}
+
+.tick-mark{
+    height: 20px;
+    margin-top: 6%;
+}
+
+.content{
+    margin-top: -6%;
+    margin-left: 10%;
+    color: green;
+}

@@ -1,0 +1,90 @@
+.roles-details-container{
+    width: 100%;
+}
+
+.roles-details{
+    font-size: 13px;
+    color: #526476;
+}
+
+.role-details-content{
+    display: flex;
+    justify-content: space-between
+}
+
+.roles-details-description{
+    font-size: 12px;
+    color: #526476;
+    margin-top: -10%;
+}
+
+.description{
+    font-size: 13px;
+    margin-top: -1%;
+    color: #526476;
+}
+
+.add-employee-button{
+    display: flex;
+    background-color: #F44848;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    padding: 5% 10%;
+    gap: 5px;
+    margin-top: 15%;
+    margin-left: -20%;
+}
+
+.roles-details{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+
+.button-content{
+    margin-top: 4%;
+}
+
+.user-details{
+    display: flex;
+    flex-direction: column;
+    width: 310px;
+    margin-top: 1%;
+    border-radius: 6px;
+    padding: 1%;
+    box-shadow: 1px 1px 5px rgb(195, 180, 180);
+}
+
+.details{
+    display: flex;
+    gap: 10px;
+    margin-top: -5%;
+}
+
+.name-image-details{
+    display: flex;
+    margin-bottom: 5%;
+}
+
+.user-name{
+    font-weight: bold;
+    margin-top: 0%;
+}
+
+.user-department{
+    font-size: 12px;
+    font-weight: 200 !important;
+}
+
+.user-image{
+    height: 20px;
+}
+
+.view-employee{
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    cursor: pointer;
+}

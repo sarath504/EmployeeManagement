@@ -1,0 +1,104 @@
+.left-header{
+    display: flex;
+    flex-direction: row;
+    box-shadow: 1px 0.5px 5px rgb(214, 207, 207);
+    width: 100%;
+    border-radius: 7px;
+    padding: 0.5%;
+    justify-content: space-between;
+}
+
+.header-icons{
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+}
+
+.dropdown-icon{
+    height: 15px;
+    margin-left: 70%;
+    margin-top: 50%;
+    cursor: pointer;
+  }
+
+.user-details{
+    margin-top: -3%;
+    margin-left: 2%;
+    font-size: 12px;
+}
+
+.user-details a{
+    text-decoration: none;
+    color: black
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.search-image{
+    height: 20px;
+    margin-left: 3%;
+}
+
+.header-img{
+    height: 30px;
+}
+
+.search-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+}
+
+.search{
+    width: 100%;
+    margin-left: 1%;
+    border: none;
+    outline: none;
+}
+
+.person-icon{
+    height: 20px;
+    position: relative;
+    top: 5px;
+}
+
+.green-dot{
+    position: relative;
+    /* top: -5px; */
+    top: 18px;
+    left: -5px;
+    height: 6px;
+}
+
+
+.filtered-employees{
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 20%;
+    z-index: 1;
+    margin-top: 0.5%;
+    border-radius: 7px;
+    box-shadow: 1px 1px 10px black;
+}
+
+.user-image{
+    height: 25px;
+}
+
+.employee{
+    padding: 3%;
+    background-color:#F4F5F6;
+    border-radius: 7px;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    cursor: pointer;
+}
+
+.employee p{
+    margin-left: 20%;
+}

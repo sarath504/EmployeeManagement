@@ -1,0 +1,232 @@
+<div class="add-employee-details">
+    <form [formGroup]="employeeInformation" (ngSubmit)="onSubmit()">
+        <h5>Add Employee</h5>
+
+        <div [ngClass]="{'form-container' : isImageUploaded}">
+            <div>
+                <div class="upload-image">
+                    <div class="profile-div">
+                        <img src="{{defaultImage}}" class="profile-picture">
+                    </div>
+                    <div class="upload-profile-picture" *ngIf="!isImageUploaded">
+                        <label for="upload-btn" class="label-upload">Upload Profile Picture</label>
+                        <input type="file" id="upload-btn" class="file-upload" 
+                        (change)="onImageUpload($event)" formControlName="Image">
+                    </div>
+                </div>
+                <div *ngIf="isImageUploaded" class="edit-container">
+                    <label for="upload-btn">Edit</label>
+                    <input type="file" id="upload-btn" class="edit-file" (change)="onImageUpload($event)">
+                </div>
+            </div>
+            <div>
+                <h5>Personel Information</h5>
+        <div class="personel-information">
+            <div>
+                <label for="emp-no" class="label">Emp No</label><br>
+                <input type="text" class="emp-input-field" id="emp-no" formControlName="Id" placeholder="TZ1001">
+                <div *ngIf="(employeeInformation.controls.Id.touched || 
+                            employeeInformation.controls.Id.dirty || isFormSubmitted) && 
+                            employeeInformation.controls.Id.invalid" class="error-message">
+                    <div *ngIf="employeeInformation.controls.Id.value=='' ">
+                        <img src="assets/required.png" class="error-image">
+                        This field is required
+                    </div>
+                    <div *ngIf="employeeInformation.controls.Id.errors?.['pattern']">
+                        <img src="assets/required.png" class="error-image">
+                        Invalid Format (Format : TZ0000)
+                    </div>
+                </div>
+            </div>
+            <div class="name-dob-fields">
+                <div>
+                    <label for="first-name" class="label">First Name</label><br>
+                    <input type="text" class="emp-name" id="first-name" formControlName="FirstName" placeholder="Text">
+                    <div *ngIf="(employeeInformation.controls.FirstName.touched || 
+                            employeeInformation.controls.FirstName.dirty || isFormSubmitted) && 
+                            employeeInformation.controls.FirstName.invalid" class="error-message">
+                    <div *ngIf="employeeInformation.controls.FirstName.value=='' ">
+                        <img src="assets/required.png" class="error-image">
+                        This field is required
+                    </div>
+                    <div *ngIf="employeeInformation.controls.FirstName.errors?.['pattern']">
+                        <img src="assets/required.png" class="error-image">
+                        Invalid Format
+                    </div>
+                </div>
+                </div>
+                <div>
+                    <label for="last-name" class="label">Last Name</label><br>
+                    <input type="text" class="emp-name" id="last-name" formControlName="LastName" placeholder="Text">
+                
+                    <div *ngIf="(employeeInformation.controls.LastName.touched || 
+                                employeeInformation.controls.LastName.dirty || isFormSubmitted) && 
+                                employeeInformation.controls.LastName.invalid" class="error-message">
+                        <div *ngIf="employeeInformation.controls.LastName.value=='' ">
+                            <img src="assets/required.png" class="error-image">
+                            This field is required
+                        </div>
+                        <div *ngIf="employeeInformation.controls.LastName.errors?.['pattern']">
+                            <img src="assets/required.png" class="error-image">
+                            Invalid Format
+                        </div>
+                     </div>
+
+                </div>
+                <div>
+                    <label for="dob" class="label">Date of Birth</label><br>
+                    <input type="date" class="emp-dob" id="dob" formControlName="Dob" placeholder="YYYY-MM-DD">
+                    
+                    <div *ngIf="(employeeInformation.controls.Dob.touched || 
+                                employeeInformation.controls.Dob.dirty || isFormSubmitted) && 
+                                employeeInformation.controls.Dob.invalid" class="error-message">
+                            <div *ngIf="employeeInformation.controls.Dob.value=='' ">
+                                <img src="assets/required.png" class="error-image">
+                                This field is required
+                            </div>
+                            <div *ngIf="employeeInformation.controls.Dob.errors?.['pattern']">
+                                <img src="assets/required.png" class="error-image">
+                                Invalid Format
+                            </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="contact-details">
+                <div>
+                    <label for="email" class="label">Email Id</label><br>
+                    <input type="text" class="emp-contact-details" id="email" formControlName="EmailId" placeholder="joe.j@tezo.com">
+                
+                    <div *ngIf="(employeeInformation.controls.EmailId.touched || 
+                                employeeInformation.controls.EmailId.dirty || isFormSubmitted) && 
+                                employeeInformation.controls.EmailId.invalid" class="error-message">
+                            <div *ngIf="employeeInformation.controls.EmailId.value=='' ">
+                                <img src="assets/required.png" class="error-image">
+                                This field is required
+                            </div>
+                            <div *ngIf="employeeInformation.controls.EmailId.errors?.['pattern']">
+                                <img src="assets/required.png" class="error-image">
+                                Invalid Format
+                            </div>
+                    </div>
+                
+                </div>
+                <div>
+                    <label for="mobile" class="label">Mobile Number</label><br>
+                    <input type="text" class="emp-contact-details" id="mobile" formControlName="Mobile" placeholder="0000000000">
+                    
+                    <div *ngIf="(employeeInformation.controls.Mobile.touched || 
+                                employeeInformation.controls.Mobile.dirty || isFormSubmitted) && 
+                                employeeInformation.controls.Mobile.invalid" class="error-message">
+                        <div *ngIf="employeeInformation.controls.Mobile.errors?.['pattern']">
+                            <img src="assets/required.png" class="error-image">
+                            Mobile Number must be 10 digits
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+        <h5>Employment Information</h5>
+        <div class="employment-information">
+            <div class="employment-information-row1">
+                <div>
+                    <label for="join-dt" class="label">Joining Date</label><br>
+                    <input type="date" class="join-date" id="join-dt" formControlName="JoinDate" 
+                    placeholder="YYYY-MM-DD">
+                
+                    <div *ngIf="(employeeInformation.controls.JoinDate.touched || 
+                                employeeInformation.controls.JoinDate.dirty || isFormSubmitted) && 
+                                employeeInformation.controls.JoinDate.invalid" class="error-message">
+                            <div *ngIf="employeeInformation.controls.JoinDate.value=='' ">
+                                <img src="assets/required.png" class="error-image">
+                                This field is required
+                            </div>
+                            <div *ngIf="employeeInformation.controls.JoinDate.errors?.['pattern']">
+                                <img src="assets/required.png" class="error-image">
+                                Invalid Format
+                            </div>
+                    </div>
+                
+                </div>
+                <div>
+                    <label for="location-dropdown" class="label" >Location</label><br>
+                    <select class="location-dropdown" id="location-dropdown" formControlName="Location" (change)="onLocationChange($event)">
+                        <option value="">Select Location</option>
+                        <option *ngFor="let loc of locations" [ngValue]="loc.locationId">{{loc.locationName}}</option>
+                    </select>
+                    <div *ngIf="(employeeInformation.controls.Location.touched || 
+                                employeeInformation.controls.Location.dirty || isFormSubmitted) && 
+                                employeeInformation.controls.Location.invalid" class="error-message">
+                        <div *ngIf="employeeInformation.controls.Location.value=='' ">
+                            <img src="assets/required.png" class="error-image">
+                            This field is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="employment-information-row2">
+                <div>
+                    <label for="job-title-dropdown" class="label" >Job Title</label><br>
+                    <select class="job-title-dropdown" id="job-title-dropdown" formControlName="Role">
+                        <option value="">Select Job Title</option>
+                        <option *ngFor="let role of roles" [ngValue]="role.roleID">{{role.name}} - {{role.locationName}}</option>
+                    </select>
+                    <div *ngIf="(employeeInformation.controls.Role.touched || 
+                                employeeInformation.controls.Role.dirty || isFormSubmitted) && 
+                                employeeInformation.controls.Role.invalid" class="error-message">
+                        <div *ngIf="employeeInformation.controls.Role.value=='' ">
+                            <img src="assets/required.png" class="error-image">
+                            This field is required
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="department-dropdown" class="label" >Department</label><br>
+                    <select class="department-dropdown" id="department-dropdown" formControlName="Department">
+                        <option value="">Select Department</option>
+                        <option *ngFor="let dept of departments" [ngValue]="dept.departmentId">{{dept.departmentName}}</option>
+                    </select>
+                    <div *ngIf="(employeeInformation.controls.Department.touched || 
+                                employeeInformation.controls.Department.dirty || isFormSubmitted) && 
+                                employeeInformation.controls.Department.invalid" class="error-message">
+                        <div *ngIf="employeeInformation.controls.Department.value=='' ">
+                            <img src="assets/required.png" class="error-image">
+                            This field is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="employment-information-row3">
+                <div>
+                    <label for="manager-dropdown" class="label" >Assign Manager</label><br>
+                    <select class="manager-dropdown" id="manager-dropdown" formControlName="Manager">
+                        <option value="">Select Manager</option>
+                        <option *ngFor="let emp of employeeData" [ngValue]="emp.id">{{emp.id}}</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="project-dropdown" class="label" >Assign Project</label><br>
+                    <select class="project-dropdown" id="project-dropdown" formControlName="Project">
+                        <option value="">Select Project</option>
+                        <option *ngFor="let project of projects" [ngValue]="project.projectId">{{project.projectName}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="add-cancel-button">
+            <button type="button" routerLink="" class="cancel-button">Cancel</button>
+            <button type="submit" class="submit-button">{{buttonText}}</button>
+        </div>
+            </div>
+    </div>
+    </form>
+</div>
+
+<div *ngIf="isSubmitted">
+    <div [ngClass]="{'success-message':isSubmitted}">
+        <img src="assets/tick.jpg" class="tick-mark"><h4 class="content"> Data Added Successfully</h4>
+    </div>
+</div>
+

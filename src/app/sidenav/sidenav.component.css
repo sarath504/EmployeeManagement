@@ -1,0 +1,236 @@
+.main{
+    font-family: sans-serif;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo-name{
+    height: 70%;
+    cursor: pointer;
+}
+
+.handle-right{
+    height: 70%;
+    rotate: 180deg;
+}
+
+.handle-button{
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    margin-left: -40%;
+}
+
+.all-text{
+    margin-top: 12%;
+    font-size: 12px;
+    color: #7D8186;
+    margin-bottom: 12%;
+}
+
+.dashboard-div{
+    height: 20px;
+    background-image: url(/assets/Horizontal-nav/Dashboard.svg);
+    background-repeat: no-repeat;
+    padding-left: 3%;
+    padding-top: 0.3%;
+    color: #7D8186;
+    font-size: 13px;
+    font-weight: 600;
+    align-items: center;
+}
+
+.dashboard-div span{
+    margin-left: 23px;
+}
+
+.sidenav-dashboard a{
+    text-decoration: none;
+}
+
+.sidenav-dashboard{
+    margin-bottom: 5%;
+}
+
+.employees-div{
+    height: 20px;
+    background-image: url(/assets/Horizontal-nav/Employees.svg);
+    background-position-y: 5px;
+    background-repeat: no-repeat;
+    padding: 4% 3% 3% 3% ;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    align-items: center;
+    color: #F55858;
+    width: 70%;
+    background-color: #FDE9E9;
+    cursor: pointer;
+}
+
+
+
+.selected-div{
+    background-color: #F44848;
+    height: 33px;
+    width: 4px;
+    margin-left: 5%;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.sidenav-employee{
+    margin-bottom: 10%;
+    display: flex;
+}
+
+.sidenav-employee a{
+    text-decoration: none;
+}
+
+.sidenav-employee span{
+    margin-left: 23px;
+}
+
+.role-user-management{
+    color: #7D8186;
+    font-size: 10px;
+}
+
+.roles-div{
+    height: 20px;
+    background-image: url(/assets/Horizontal-nav/Roles.svg),url(/assets/right-vector.png);
+    background-repeat: no-repeat;
+    background-position: 0%,80%;
+    background-size: 20px, 15px;
+    padding-left: 3%;
+    padding-top: 0.3%;
+    color: #7D8186;
+    font-size: 13px;
+    font-weight: 600;
+    align-items: center;
+    cursor: pointer;
+}
+
+.left-container-roles{
+    margin-bottom: 5%;
+}
+
+.roles-div span{
+    margin-left: 23px;
+}
+
+.left-container-access-rights a{
+    text-decoration: none;
+}
+
+.left-container-access-rights{
+    margin-bottom: 1%;
+}
+
+.access-rights-div{
+    height: 20px;
+    background-image: url(/assets/Horizontal-nav/assign-user.svg),url(/assets/right-vector.png);
+    background-repeat: no-repeat;
+    background-position: 0%,80%;
+    background-size: 20px, 15px;
+    padding-left: 3%;
+    padding-top: 0.3%;
+    color: #7D8186;
+    font-size: 13px;
+    font-weight: 600;
+    align-items: center;
+}
+
+.access-rights-div span{
+    margin-left: 23px;
+}
+
+.left-container-update{
+    width: 85%;
+    background-color: #FEF6F6;
+    padding: 4%;
+    border-radius: 7px;
+    margin-top: 80%;
+}
+
+.update-heading{
+    font-size: 12.5px;
+    font-weight: bold;
+    color: #F55C5C;
+}
+
+.update-description{
+    font-size: 13px;
+    color: #7D8186;
+}
+
+.btn-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.dismiss-btn{
+    color: #F56363;
+    background-color: #FDE6E6;
+    padding: 17% 27%;
+    font-size: 13px;
+    border-radius: 6px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.red-btn{
+    color: white;
+    padding: 17% 27%;
+    font-size: 13px;
+    margin-left: 75%;
+    background-color: #F44848;
+    border-radius: 6px;
+    border-style: none;
+    cursor: pointer;
+}
+
+
+.header-component{
+    display: flex;
+    flex-direction: row;
+    margin-left: 1%;
+}
+
+
+.hamburger-menu{
+    margin-left: 0%;
+    position: sticky;
+    height: 480px;
+    top: 0;
+    width: 30%;
+}
+
+
+.handle{
+    margin-top: -7%;
+    margin-left: 25%;
+
+}
+
+.logo-header{
+    display: flex;
+}
+
+.logo-circle{
+    height: 50%;
+}
+
+.sidenave-image{
+    margin-left: 20%;
+    margin-bottom: 100%;
+}
+
+.tezo-circle{
+    padding:0% 10% ;
+}

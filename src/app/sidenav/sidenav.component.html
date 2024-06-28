@@ -1,0 +1,63 @@
+<div class="main" *ngIf="!isHandleClicked">
+    <div class="logo">
+        <div>
+            <img src="/assets/TezoLogo.svg" alt="logo" class="logo-name">
+        </div>
+        <div>
+            <button class="handle-button"><img src="/assets/handle.png" alt="handle" class="handle" (click)="sideNavClose()"></button>
+        </div>
+    </div>
+    <p class="all-text">ALL</p>
+    <div class="sidenav-dashboard">
+        <a routerLink="/home/employees">
+            <div class="dashboard-div"><span>Dashboard</span></div>
+        </a>
+    </div>
+    <div class="sidenav-employee">
+        <div class="employees-div" routerLink="/home/employees">
+            <span>Employees</span>
+        </div>
+        <div class="selected-div"></div>
+    </div>
+    <p class="role-user-management">ROLE / USER MANAGEMENT</p><br>
+    <div class="left-container-roles" >
+        <div class="roles-div" routerLink="/home/roles" >
+            <span>Roles</span>
+        </div>
+    </div>
+    <div class="left-container-access-rights">
+        <a routerLink="/home/employees">
+            <div class="access-rights-div"><span>Access Rights</span></div>
+        </a>
+    </div>
+
+    <div class="left-container-update">
+        <p class="update-heading">Install new update 2.3.1A</p>
+        <p class="update-description">Allow to launch the new update for the AD application</p>
+        <div class="btn-flex">
+            <div>
+                <button class="dismiss-btn">Dismiss</button>
+            </div>
+            <div>
+                <button class="red-btn">Accept</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="hamburger-menu" *ngIf="isHandleClicked">
+    <div class="logo-header">
+        <div>
+            <a href="#"><img src="assets/logo-circle.PNG" class="logo-circle"></a>
+        </div>
+        <div>
+            <button class="handle-button"><img src="assets/handle.png" class="handle-right" (click)="sideNavClose()"></button>
+        </div>
+    </div>
+    <div ><a href="#"><img src="assets/Horizontal-nav/Dashboard.svg" class="sidenave-image"></a></div>
+    <div class="sidenave-image"><a href="employee.html"><img src="assets/Horizontal-nav/Employees.svg"></a></div>
+    <div class="sidenave-image"><a href="../Roles/roles.html"><img src="assets/Horizontal-nav/Roles.svg"></a></div>
+    <div class="sidenave-image"><a href="#"><img src="assets/Horizontal-nav/assign-user.svg"></a></div>
+</div>
+

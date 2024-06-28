@@ -1,0 +1,83 @@
+<div>
+    <h5>Create New Role</h5>
+    <form [formGroup]="roleInformation" (ngSubmit)="onSubmit()">
+        <div class="role-department">
+            <div>
+                <label for="role-name" class="label">Role Name</label><br>
+                <input type="text" class="role-name" id="role-name" formControlName="roleName">
+                <div *ngIf="(roleInformation.controls.roleName.touched || 
+                            roleInformation.controls.roleName.dirty || isFormSubmitted) && 
+                            roleInformation.controls.roleName.invalid" class="error-message">
+                    <div *ngIf="roleInformation.controls.roleName.invalid">
+                        <img src="assets/required.png" class="error-image">
+                        This field is required
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="department" class="label">Department</label><br>
+                <select class="department" id="department" formControlName="department">
+                    <option value="" selected>Select Department</option>
+                    <option *ngFor="let dept of departments" [ngValue]="dept.departmentId">{{dept.departmentName}}</option>
+                </select>
+                <div *ngIf="(roleInformation.controls.department.touched || 
+                            roleInformation.controls.department.dirty || isFormSubmitted) && 
+                            roleInformation.controls.department.invalid" class="error-message">
+                    <div *ngIf="roleInformation.controls.department.invalid ">
+                        <img src="assets/required.png" class="error-image">
+                        This field is required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="description-container">
+            <label for="description" class="label">Description</label><br>
+            <textarea id="description" class="description" rows="8" cols="55" placeholder="Text" formControlName="description"></textarea>
+        </div>
+        <div class="location-container">
+            <label for="location" class="label">Location</label><br>
+                <select class="location" id="location" formControlName="location">
+                    <option value="" selected>Select Location</option>
+                    <option *ngFor="let loc of locations" [ngValue]="loc.locationId">{{loc.locationName}}</option>
+                </select>
+                <div *ngIf="(roleInformation.controls.location.touched || 
+                            roleInformation.controls.location.dirty || isFormSubmitted) && 
+                            roleInformation.controls.location.invalid" class="error-message">
+                    <div *ngIf="roleInformation.controls.location.invalid ">
+                        <img src="assets/required.png" class="error-image">
+                        This field is required
+                    </div>
+                </div>
+        </div>
+        <div class="assign-employees">
+            <label for="assign" class="label">Assign Employees</label><br>
+            <input type="text" class="assign" id="assign" 
+            formControlName="employees" (click)="onFocus()" placeholder="Search for an Employee">
+            <div *ngIf="isEmployeesVisible" class="display-employees" >
+                <div *ngFor="let emp of employees" class="employees">
+                    <div class="user-data">
+                        <img src="assets/user-4.jpg" class="employee-image">
+                        <label for="{{emp.name}}">{{emp.name}}</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox" id="{{emp.name}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <div>
+                <button type="button" class="cancel" routerLink="/home/roles">Cancel</button>
+            </div>
+            <div>
+                <button type="submit" class="add-role">{{buttonContent}}</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div *ngIf="isSubmitted">
+    <div [ngClass]="{'success-message':isSubmitted}">
+        <img src="assets/tick.jpg" class="tick-mark"><h4 class="content"> Role Added Successfully</h4>
+    </div>
+</div>

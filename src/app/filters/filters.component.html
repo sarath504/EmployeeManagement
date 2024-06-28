@@ -1,0 +1,69 @@
+<div class="button-group" *ngIf="isAlphabetFilterVisible">
+    <div class="btn">
+        <img src="assets/Interface/black-filter.svg" class="vector-image">
+    </div>
+    <div class="btn" *ngFor="let alpha of alphabets">
+        <button class="btn-alpha {{alpha}}" (click)="IsClick(alpha)" [ngClass]="{'btn-clicked':alpha==clickedLetter}">{{alpha}}</button>
+    </div>
+</div>
+
+<div class="filter-div">
+    <div class="filter">
+        Filter
+        <img src="assets/filter.svg" class="filter-img">
+        <div class="dropdown" *ngIf="isStatusDropdownVisible">
+            <button type="button" class="dropdown-button" (click)="statusDropdown()">
+                <span>Status ({{statusCount}})</span>
+                <img src="assets/Down.png" class="dropdown-icon">
+            </button>
+            <div class="dropdown-content" [ngStyle]="{'display':isStatusClicked?'block':'none'}">
+                <label for="dropdown-checkbox+{{st.statusName}}" class="dropdown-value-btn" 
+                *ngFor="let st of status" >
+                    {{st.statusName}} 
+                    <input type="checkbox" id="dropdown-checkbox+{{st.statusName}}" (change)="isSelectedStatus(st.statusName,$event)">
+                </label><br>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button type="button" class="dropdown-button" (click)="locationDropdown()">
+                <span>Location ({{locationCount}})</span>
+                <img src="assets/Down.png" class="dropdown-icon">
+            </button>
+            <div class="dropdown-content" [ngStyle]="{'display':isLocationClicked?'block':'none'}">
+                <label for="dropdown-checkbox+{{loc.locationName}}" class="dropdown-value-btn" 
+                *ngFor="let loc of location" >
+                    {{loc.locationName}} 
+                    <input type="checkbox" id="dropdown-checkbox+{{loc.locationName}}"  (change)="isSelectedLocation(loc.locationName,$event)">
+                </label><br>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button type="button" class="dropdown-button" (click)="departmentDropdown()">
+                <span>Department ({{departmentCount}})</span>
+                <img src="assets/Down.png" class="dropdown-icon">
+            </button>
+            <div class="dropdown-content" [ngStyle]="{'display':isDepartmentClicked?'block':'none'}">
+                <label for="dropdown-checkbox+{{dept.departmentName}}" class="dropdown-value-btn" 
+                    *ngFor="let dept of department" >
+                    {{dept.departmentName}} 
+                    <input type="checkbox" id="dropdown-checkbox+{{dept.departmentName}}" (change)="isSelectedDepartment(dept.departmentName,$event)">
+                </label><br>
+            </div>
+        </div>
+    </div>
+    <div class="btn-div">
+        <div class="filter-reset-apply">
+            <div>
+                <button  type="button" class="reset" [disabled]="isDisabled">
+                Reset
+            </button>
+            </div>
+            <div>
+                <button type="button" class="apply"
+                [disabled]="isDisabled" (click)="applyFilters()">Apply</button>
+            </div>
+        </div>
+    </div>
+</div>

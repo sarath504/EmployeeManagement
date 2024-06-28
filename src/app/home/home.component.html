@@ -1,0 +1,13 @@
+<div class="main-container">
+    <div class="side-nav-component" [ngStyle]="{'width':message ? '7%' : '15%', 'transition': '0.7s' }">
+        <app-sidenav (message)="receiveMessage($event)"></app-sidenav>
+    </div>
+    <div class="right-container">
+        <div class="search-header"> 
+            <app-header></app-header>
+        </div>
+        <div class="employee-details">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

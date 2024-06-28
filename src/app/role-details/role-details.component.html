@@ -1,0 +1,47 @@
+<div class="roles-details-container">
+    <div class="role-details-content">
+        <div>
+            <h4 class="roles-details"> Roles > Employees</h4><br>
+            <p class="roles-details-description">All the roles are configured here</p>
+        </div>
+        <div>
+            <button type="button" class="add-employee-button">
+                <img src="assets/Interface/Add.svg" class="plus-icon"><span class="button-content">ADD EMPLOYEE</span>
+            </button>
+        </div>
+    </div>
+    <h5>Role Description</h5>
+    <p class="description">Configure the providers that are available to the users when they sign in.
+        Configure the providers that are available to the users when they sign in.
+        Configure the providers that are available to the users when they sign in.
+        Configure the providers that are available to the users when they sign in.
+    </p>
+    <div class="roles-details">
+        <div class="user-details" *ngFor="let employee of employees">
+            <div class="name-image-details">
+                <img src="{{employee.image}}" class="user-image">
+                <p class="user-name">{{employee.name}}<br><span class="user-department">{{employee.roleName}}</span></p>
+            </div>
+            <div class="details">
+                <img src="assets/Id.svg">
+                <p>{{employee.id}}</p>
+            </div>
+            <div class="details">
+                <img src="assets/email.svg">
+                <p>{{employee.emailId}}</p>
+            </div>
+            <div class="details">
+                <img src="assets/team.svg">
+                <p>{{employee.departmentName}}</p>
+            </div>
+            <div class="details">
+                <img src="assets/location.svg">
+                <p>{{employee.locationName}}</p>
+            </div>
+            <div class="view-employee">
+                <span>View</span>
+                <img src="assets/Vector.svg" class="arrow">
+            </div>
+        </div>
+    </div>
+</div>

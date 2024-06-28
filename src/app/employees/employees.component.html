@@ -1,0 +1,151 @@
+<div class="body">
+    <div class="employee-description">
+        <p class="employee-heading">Employees</p>
+        <p class="employee-heading-description">Find all of your company's employee accounts and their associated roles.</p>
+    </div>
+    <div class="btn-group">
+        <button class="export-button" (click)="exportToExcel()">EXPORT</button>
+        <a routerLink="/home/addemployee"><button class="add-employeeButton">ADD EMPLOYEE</button></a>
+    </div>
+</div>
+<app-filters (filteredData)="filteredDataFromChild($event)"></app-filters>
+
+<div class="emp-details">
+    <div class="row-1">
+        <div class="btn-delete">
+            <div>
+                <img src="assets/arrow-turn left -down.png" class="arrow-image">
+            </div>
+            <div class="delete-btn-div">
+                <button class="delete-btn" [disabled]="enableDeleteButton" (click)="deleteEmployees()">
+                    Delete
+                </button>
+            </div>
+        </div>
+        <div class="table-img-div">
+            <a href="#"><img src="assets/table-add.png" class="table-img"></a>
+        </div>
+    </div>
+    <hr class="horizontal-line">
+    
+    <div class="table-data">
+        <table class="user-data">
+            <thead>
+                <tr>
+                <th class="checkbox-header-cell"><input type="checkbox" 
+                    [(ngModel)]="allSelected" 
+                    (change)="toggleAllRows()"
+                    class="header-checkbox">
+                </th>
+                <th class="table-user">
+                    <div class="sorting-flex" >
+                        <div class="user-heading">
+                            USER
+                        </div>
+                        <div>
+                            <img src="assets/anguar-icon.png" class="sorting-image" (click)="sortData('user')">
+                        </div>
+                    </div>
+                </th>
+                <th >
+                    <div class="sorting-flex">
+                        <div>
+                            LOCATION
+                        </div>
+                        <div>
+                            <img src="assets/anguar-icon.png" class="sorting-image" (click)="sortData('location')">
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div class="sorting-flex">
+                        <div>
+                            DEPARTMENT
+                        </div>
+                        <div>
+                           <img src="assets/anguar-icon.png" class="sorting-image" (click)="sortData('department')">
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div class="sorting-flex">
+                        <div class="table-head-role">
+                            ROLE
+                        </div>
+                        <div>
+                            <img src="assets/anguar-icon.png" class="sorting-image" (click)="sortData('role')">
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div class="sorting-flex">
+                        <div>
+                            EMP NO
+                        </div>
+                        <div>
+                            <img src="assets/anguar-icon.png" class="sorting-image" (click)="sortData('empId')">
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div class="sorting-flex">
+                        <div class="status-div">
+                            STATUS
+                        </div>
+                        <div>
+                            <img src="assets/anguar-icon.png" class="sorting-image" (click)="sortData('status')">
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div class="sorting-flex">
+                        <div>
+                            JOIN DT
+                        </div>
+                        <div>
+                            <img src="assets/anguar-icon.png" class="sorting-image" (click)="sortData('joinDate')">
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div class="sorting-flex">
+                        <div class="more">
+                        </div>
+                    </div>
+                </th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                <tr *ngFor="let emp of employeeDetails;let i=index">
+
+                    <td class="checkbox-header-cell body-checkbox"><input type="checkbox"
+                        [(ngModel)]="selectedRows[i]" (change)="checkIfAllSelected()" class="checkbox-body">
+                    </td>
+
+                    <td class="user-cell"><img src="{{emp.image}}" class="user-image">{{emp.lastName}} {{emp.firstName}}<br>
+                    <span>{{emp.emailId}}</span>
+                    </td>
+                    <td class="table-location">{{emp.locationName}}</td>
+                    <td class="table-department">{{emp.departmentName}}</td>
+                    <td class="table-role">{{emp.roleName}}</td>
+                    <td>{{emp.id}}</td>
+                    <td class="table-status"><span class="status">{{emp.statusName}}</span></td>
+                    <td class="table-join-date">{{emp.joinDate | date:' dd/MM/yyyy'}}</td>
+                    <td>
+                        <div class="three-dots">
+                            <span (click)="threeDotsClicked(emp.id)">
+                                ...
+                            </span>
+                            <div class="ellipsis-menu" [ngClass]="isThreeDotsClicked[i] ? 'ellipsis-menu-show' : 'ellipsis-menu' ">
+                                <div class="menu" [routerLink]="['/home/addemployee',emp.id]">Edit</div>
+                                <div class="menu" (click)="deleteEmployee(emp.id)">Delete</div>
+                                <div class="menu">View</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

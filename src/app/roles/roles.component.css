@@ -1,0 +1,140 @@
+.roles-component{
+    margin-left: 1%;
+}
+
+.roles-component h5{
+    color:#656f79;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.roles-description{
+    font-size: 12px;
+    color: #B0B8C0;
+    font-weight: 200;
+}
+
+.role-header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.add-role-button{
+    display: flex;
+    gap: 10%;
+    width: 150%;
+    height: 10%;
+    margin-left: -50%;
+    padding-left: 20%;
+    margin-top: -5%;
+    background-color: #F44848;
+    border-style: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.plus-icon{
+    height: 20px;
+    margin-top: 10%;
+}
+
+.roles-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2%;
+    
+}
+
+.roles-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 1px 1px 5px rgb(212, 203, 203);
+    width: 322px;
+    margin-top: 2%;
+    border-radius: 7px;
+    padding-right: 1%;
+    padding-bottom: 1%;
+}
+
+.role-name{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 10%;
+}
+
+.role-name h5{
+    margin-left: 5%;
+    color: black;
+}
+
+.team-image{
+    height: 15px;
+}
+
+.role-department{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+    color: #848EA2;
+    font-size: 12px;
+}
+
+.role-department span{
+    margin-left: 5%;
+}
+
+.department{
+    display: flex;
+}
+
+.role-location{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+    color: #848EA2;
+    font-size: 12px;
+    margin-top: 4%;
+}
+
+.role-location span{
+    margin-left: 5%;
+}
+
+.location{
+    display: flex;
+}
+
+.role-employees{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+    font-size: 12px;
+    margin-top: 4%;
+    color: #848EA2;
+}
+
+.profile-images{
+    height: 30px;
+    margin-top: -3%;
+}
+
+.view-employees{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5%;
+}
+
+.view-employees span{
+    font-size: 12px;
+    cursor: pointer;
+}
+
+

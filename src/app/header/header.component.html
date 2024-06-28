@@ -1,0 +1,31 @@
+<div class="header">
+    <div class="left-header">
+        <div class="search-header">
+            <img src="assets/search.png" class="search-image">
+            <input type="text" class="search" placeholder="Search" [(ngModel)]="query" (keyup)="searchEmployees()">
+        </div>
+        
+        <div class="header-icons">
+            <a href="#"><img src="assets/language.png" class="header-img"></a>
+            <a href="#"><img src="assets/category.png" class="header-img"></a>
+            <a href="#"><img src="assets/night-mode.png" class="header-img"></a>
+            <a href="#"><img src="assets/notification.png" class="header-img"></a>
+            <a href="#"><img src="assets/user-1.jpg" class="person-icon"></a>
+            <img src="assets/green-dot.png" class="green-dot">
+            <div class="user-details">
+                <a href="#"><p>Jhon Abraham<br><b>Admin</b></p></a>
+            </div>
+            <div>
+                <img src="assets/Down.png" class="dropdown-icon">
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="filtered-employees" *ngIf="divDisplay">
+    <div *ngFor="let emp of filteredEmployees" class="employee">
+        <li><img src="{{emp.image}}" class="user-image"> {{emp.id}} - {{emp.name}}</li>
+        <p>{{emp.roleName}}</p>
+    </div>
+</div>
